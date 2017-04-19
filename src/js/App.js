@@ -4,6 +4,7 @@ import SignIn from './SignIn'
 import CurrentUser from './CurrentUser'
 import './App.css'
 
+
 class App extends Component {
   constructor (props) {
     super(props)
@@ -23,12 +24,11 @@ class App extends Component {
     const { currentUser } = this.state
 
     return (
-      <div className='App'>
-        <header>
+      <div className="App">
+        <header className="App-header">
          <h2>Soundcheck</h2>
         </header>
         <div> 
-
           { !currentUser && <SignIn /> }
           { currentUser && <CurrentUser user={currentUser} /> } 
         </div>

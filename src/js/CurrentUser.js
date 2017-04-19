@@ -1,10 +1,11 @@
 import React, { PropTypes } from 'react'
 import { auth } from './firebase'
+import '../css/CurrentUser.css'
 
 const CurrentUser = ({ user }) => {
   return (
     <div className="CurrentUser">
-      { user.displayName }
+      <img src={ user.photoURL } alt={ user.displayName }/>
     </div>      
   )
 }
