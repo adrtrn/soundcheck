@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { database } from './firebase.js'
+import { auth, database } from './firebase.js'
+import SignIn from './SignIn'
 import './App.css'
 
 class App extends Component {
@@ -21,12 +22,12 @@ class App extends Component {
   render () {
     return (
       <div className='App'>
-        <div className='App-header'>
-          <h2>Welcome to React</h2>
+        <header>
+         <h2>Soundcheck</h2>
+        </header>
+        <div> 
+          <SignIn/>
         </div>
-        <p className='App-intro'>
-          { JSON.stringify(this.state.data, null, 2) }
-        </p>
       </div>
     )
   }
