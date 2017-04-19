@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { auth, database } from './firebase'
 import SignIn from './SignIn'
 import CurrentUser from './CurrentUser'
-import './App.css'
+import '../css/App.css'
 
 
 class App extends Component {
