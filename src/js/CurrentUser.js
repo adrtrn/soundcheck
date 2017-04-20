@@ -4,15 +4,15 @@ import '../css/CurrentUser.css'
 
 const CurrentUser = ({ user }) => {
   return (
-    <div className="CurrentUser">
-      <img className="CurrentUser-Photo" src={ user.photoURL } alt={ user.displayName }/>
-      <div className="CurrentUser-Identification">
+    <div className='CurrentUser'>
+      <img className='CurrentUser-Photo' src={user.photoURL} alt={user.displayName} />
+      <div className='CurrentUser-Identification'>
         <h3> { user.displayName } </h3>
       </div>
       <button onClick={() => auth.signOut()}>
         Sign Out
       </button>
-    </div>      
+    </div>
   )
 }
 

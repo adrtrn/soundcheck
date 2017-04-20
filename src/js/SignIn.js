@@ -7,9 +7,9 @@ class SignIn extends Component {
       <div className='SignIn'>
         <button onClick={() => auth.signInWithPopup(googleAuthProvider)}>
           Sign in with Google
-        </button>        
+        </button>
         <button onClick={() => auth.signInWithPopup(facebookAuthProvider)}>
-          Login with Facebook 
+          Login with Facebook
         </button>
       </div>
     )

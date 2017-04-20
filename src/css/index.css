@@ -14,9 +14,16 @@ button, input[type="submit"], .button {
   border: 1px solid hsla(191, 76%, 37%, 1);
   box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.20);
   color: white;
-  font-size: 0.8rem;
+  font-size: .8em;
   font-weight: 300;
   outline: none;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   transition: 0.3s all;
+}
+
+input {
+  margin-top: 5em;
+  height: 3em;
+  width: 30em;
+  border: solid 1px black;
 }

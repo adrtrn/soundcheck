@@ -1,0 +1,13 @@
+.Post {
+  border: solid 1px black;
+  margin-bottom: 1.2em;
+}
+
+.Post ul {
+  text-decoration: none;
+}
+
+iframe {
+    display:block;
+    width:100%;  
+}

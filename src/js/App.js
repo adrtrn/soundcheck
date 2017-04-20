@@ -2,38 +2,47 @@ import React, { Component } from 'react'
 import { auth, database } from './firebase'
 import SignIn from './SignIn'
 import CurrentUser from './CurrentUser'
+import NewPost from './NewPost'
+import Posts from './Posts'
 import '../css/App.css'
-
 
 class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentUser: null
+      currentUser: null,
+      posts: null
     }
+
+    this.postRef = database.ref('/posts')
   }
 
   componentDidMount () {
     auth.onAuthStateChanged((currentUser) => {
-      console.log('MEOW', currentUser)
       this.setState({ currentUser })
+
+      this.postRef.on('value', (snapshot) => {
+        this.setState({ posts: snapshot.val() })
+      })
     })
   }
 
   render () {
-    // pulls the currentUser and stores it
-    const { currentUser } = this.state
+    const { currentUser, posts } = this.state
 
     return (
-      <div className="App">
-      <header className="App-header">
-        <h2>Soundcheck</h2>
-        {  /* If there is no current user, then display signin */ }
-        { !currentUser && <SignIn /> }
-      </header>
-        {  /* If there is current user, then display user info */ }
-        
-        { currentUser && <CurrentUser user={currentUser} /> } 
+      <div className='App'>
+        <header className='App-header'>
+          <h2>Soundcheck</h2>
+          { !currentUser && <SignIn /> }
+        </header>
+        { currentUser &&
+        <div>
+          <CurrentUser user={currentUser} />
+          <NewPost />
+          <Posts posts={posts} user={currentUser} />
+        </div>
+      }
       </div>
     )
   }
