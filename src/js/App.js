@@ -15,6 +15,7 @@ class App extends Component {
 
   componentDidMount () {
     auth.onAuthStateChanged((currentUser) => {
+      console.log('MEOW', currentUser)
       this.setState({ currentUser })
     })
   }
@@ -25,13 +26,14 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-         <h2>Soundcheck</h2>
-        </header>
-        <div> 
-          { !currentUser && <SignIn /> }
-          { currentUser && <CurrentUser user={currentUser} /> } 
-        </div>
+      <header className="App-header">
+        <h2>Soundcheck</h2>
+        {  /* If there is no current user, then display signin */ }
+        { !currentUser && <SignIn /> }
+      </header>
+        {  /* If there is current user, then display user info */ }
+        
+        { currentUser && <CurrentUser user={currentUser} /> } 
       </div>
     )
   }

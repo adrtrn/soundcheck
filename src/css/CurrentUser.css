@@ -1,3 +1,18 @@
 .CurrentUser {
-  border: solid red;
+  display: flex;
+  border: 1px solid #ccc;
+  justify-content: space-between;
+}
+
+.CurrentUser-Identification {
+  padding: 1em;
+  flex: 1;
+  font-size: 1em;
+  text-align: left;
+  font-family: Helvetica;
+}
+
+.CurrentUser-Photo {
+  max-height: 100px;
+  width: 100px;
 }
